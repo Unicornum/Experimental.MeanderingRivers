@@ -130,6 +130,7 @@ public:
 	void AddChannel(const Channel& ch);
 	void AddPointConstraint(const PointConstraint& c);
 	void TriggerAvulsion();
+	const std::vector<Channel> & GetChannels(void) const { return channels; }
 
 	// Simulation
 	void Step();
