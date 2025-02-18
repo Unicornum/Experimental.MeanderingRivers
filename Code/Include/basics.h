@@ -715,6 +715,17 @@ public:
 		j = int(v * (ny - 1));
 	}
 
+	inline Vector2 IntegerToVertex(const int & x, const int & y) const
+	{
+		auto u = (double)x / (nx - 1);
+		auto v = (double)y / (ny - 1);
+
+		Vector2 d = box.Vertex(1) - box.Vertex(0);
+		Vector2 q(v * d[0], u * d[1]);
+
+		return q + box.Vertex(0);
+	}
+
 	/*!
 	\brief Fill all the field with a given value.
 	*/
